@@ -1,0 +1,118 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+        <title>CANTOR - Addison Prairie </title>
+        <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+                font-family: "Figtree";
+                background-color: whitesmoke;
+            }
+            p {
+                padding: 0px;
+                margin: 5px 0px;
+                font-size: 18px;
+                text-indent: 30px;
+                color: #111111;
+            }
+            .comment {
+                text-align: center;
+                font-size: 15px;
+                margin: 4px 0px 10px 0px;
+            }
+
+            .step-name {
+                text-indent: 0px;
+                font-size: 30px;
+                margin: 10px 0px;
+                text-align: center;
+            }
+
+            .step-description {
+                font-size: 18px;
+            }
+            ol, ul {
+                font-size: 18px;
+            }
+            li {
+                margin: 4px 0px;
+            }
+            .code {
+
+                background-color: rgb(216, 216, 216);
+                margin: 10px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin: 10px auto 5px auto; width: 756px">
+            <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">CANTOR OVERVIEW</p>
+            <div style="height: 5px; width: 75px"></div>
+            <p style="color: #828282; padding: 0px; margin: 0px; font-size: 15px; text-align: center; text-indent: 0px">
+            <a href="google.com" style="color: #828282">CANTOR code</a> | <a href="/wfc/demo/index.html" style="color: #828282">CANTOR demo</a></p>
+            <div style="height: 5px; width: 75px"></div>
+            
+            <p>
+                CANTOR is a website that adapts concepts from quantum mechanics to procedurally generate 3D sculptures.
+            </p>
+
+            <video width="750px" preload="auto" loop="true" autoplay="true" controls style="margin: 10px 3px 1px 3px; padding: 0px">
+                <source src="/videos/wfcrunning1.mp4" type="video/mp4">
+            </video>
+
+            <div style="width: 100%; height: 10px"></div>
+            
+            <p>
+                Once you enter the <a href="/wfc/demo/index.html" style="color: #111111">CANTOR demo</a>, a unique sculpture will automatically be generated for you. In the controls on the right of your screen, you can generate more sculptures, change parameters that affect the structure of your sculpture, and change environmental variables like the time of day. Learn more about each control in the instructions below.
+            </p>
+            
+            <div style="width: 100%; height: 50px"></div>
+
+            <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">INSTRUCTIONS</p>
+            <p style=" font-size: 18px">Note: this demo uses webGPU. As such, it may require an experimental browser build like <a href="https://www.google.com/chrome/canary/">Chrome Canary</a> or <a href="https://www.microsoftedgeinsider.com/en-us/download/canary">Microsoft Edge Canary</a>. If you receive a "webGPU not supported" alert upon entering the site, you may need to enable webGPU in your browser's flags.</p>
+
+            <p class="step-name">Step 1 - moving around your sculpture</p>
+            <p class="step-description">To change the direction you are facing, left click and move your mouse. Once you are facing your desired direction, left click again.</p>         
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/wfc-88640.png"></image>
+            <p class="comment">an 8x8x64 sculpture with "Empty Spaces" set to 0</p>
+
+            <p class="step-name">Step 2 - Adjusting environmental and lighting settings</p>
+            <p class="step-description">
+                CANTOR offers you a set of changeable parameters that adjust its environment. The time of day and position of the sun can be changed using their respective sliders in the "Lighting and Environmental Controls" folder, and the number of times light bounces can be changed in the "Light Bounces" field. You can also change the distance from the camera to the sculpture in the "Distance" field.
+            </p>
+            
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/wfc-8880.png"></image>
+            <p class="comment">an 8x8x8 sculpture with "Empty Spaces" set to 0</p>
+
+            <p class="step-name">Step 3 - Generating new sculptures</p>
+            <p class="step-description">
+                To generate a new sculpture, click "Generate New Sculpture" in the "Sculpture Controls" folder. CANTOR provides you with a set of parameters to change the structure of your sculpture: </p>
+            </p>
+            <ul style="margin: 0px; list-style-type: none">
+                <li>"X/Y/Z axis" - changes the respective size of the sculpture generated. While values larger than 16 will work, larger sculptures may take significantly longer to generate.</li>
+                <li>"Empty Spaces" - changes the chance that the next tile generated will be empty. At 0, empty spaces are just as likely as non-empty spaces. At .99, there is a 99% chance that the generation algorithm will make the next tile empty. The higher the percentage, the more hollow the sculpture will be.</li>
+                <li>"Generation Speed" - changes the speed of the generation algorithm.</li>
+            </ul>
+
+            <p class="step-description">
+                Once you have generated a sculpture you like, let the progressive renderer run until it achieves your desired image quality. You can save your image using the "Download Image" button.
+            </p>
+            
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/wfc-8816.5.png"></image>
+            <p class="comment">an 8x8x16 sculpture with "Empty Spaces" set to 0.5</p>
+
+        <div style="width: 100%; height: 10px"></div>
+
+        <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">THANKS</p>
+
+        <div style="width: 100%; height: 10px"></div>
+
+        <p style="font-size: 18px">
+            Thanks to <a href="https://github.com/dataarts/dat.gui">dat.GUI</a>, which helped create the HUD.
+        </p>
+
+        </div>
+    </body>
+</html>

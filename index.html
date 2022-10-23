@@ -1,0 +1,191 @@
+<html>
+    <head>
+        <script src="home.js"></script>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+        <title>Home - Addison Prairie </title>
+        <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+                font-family: "Figtree";
+                background-color: whitesmoke;
+            }
+            .header {
+                width: 100%;
+                height: 100px;
+                padding: 0px;
+                margin: 0px;
+                background-color: red;
+            }
+            .article {
+                margin: 2px 2px;
+                -webkit-filter: brightness(100%);
+                overflow: hidden;
+                transform-origin: .5 .5;
+                -webkit-transition: all .5s ease;
+                -moz-transition: all .5s ease;
+                -o-transition: all .5s ease;
+                -ms-transition: all .5s ease;
+                transition: all .5s ease;
+                width: 250px;
+                height: 250px;
+                z-index: 0;
+            }
+            .article > img {
+                width: 250px;
+                height: 250px;
+                overflow: hidden;
+                transform-origin: .5 .5;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                transition: all .3s ease;
+                z-index: 0;
+            }
+            .article:hover > img {
+                transform: scale(1.1);
+                -webkit-filter: brightness(60%);
+            }
+            .article > div {
+                font-size: 20px;
+                padding: 0;
+                margin: 0;
+                z-index: 2;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+                color: white;
+                display: none;
+            }
+            .article:hover div {
+                display: inline;
+                cursor: context-menu;
+            }
+            .article > div > .Title {
+                text-align: center;
+                margin: 0px;
+                padding: 0px;
+                font-size: 40px;
+
+            }
+            .article > div > .Desc {
+                text-align: center;
+                margin: 0px;
+                padding: 0px;
+                font-size: 18px;
+            }
+            .gallery {
+                margin: 2px 2px;
+                -webkit-filter: brightness(100%);
+                overflow: hidden;
+                transform-origin: .5 .5;
+                -webkit-transition: all .5s ease;
+                -moz-transition: all .5s ease;
+                -o-transition: all .5s ease;
+                -ms-transition: all .5s ease;
+                transition: all .5s ease;
+                width: 250px;
+                height: 250px;
+                z-index: 0;
+            }
+            .gallery > img {
+                width: 250px;
+                height: 250px;
+                overflow: hidden;
+                transform-origin: .5 .5;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                -ms-transition: all .3s ease;
+                transition: all .3s ease;
+                z-index: 0;
+            }
+            .gallery:hover > img {
+                transform: scale(1.03);
+                -webkit-filter: brightness(90%);
+            }
+        </style>
+    </head>
+    <body>
+        <div style="width: 100%; height: 50px;">
+            <p style="text-align: center; font-size: 30px;  margin: 25px auto">Addison Prairie - Portfolio</p>
+        </div>
+        <div style="margin: 10px auto 5px auto; width: 756; padding: 0px 0px 0px 0px">
+            <p style="padding: 0px; margin: 0px; font-size: 30px; text-align: center;">Demos</p>
+        </div>
+        <div style="margin: 0px auto 0px auto; width: 756; display: grid; grid-template-columns: auto auto auto; gap: 0px; overflow: hidden;">
+            <a class="article" href="/sdf/sdf.html">
+                <div>
+                    <p class="Title">
+                        GALOIS
+                    </p>
+                    <p class="Desc">
+                        a site for path tracing 3D fractals
+                    </p>
+                </div>
+                <image src="/source/spiral1.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </a>
+            <a class="article" href="wfc/wfc.html">
+                <div>
+                    <p class="Title">
+                        CANTOR
+                    </p>
+                    <p class="Desc">
+                        a site for generating 3D sculptures
+                    </p>
+                </div>
+                <image src="/source/pipes1.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </a>
+            <a class="article" href="vox/vox.html">
+                <div>
+                    <p class="Title">
+                        GAUSS
+                    </p>
+                    <p class="Desc">
+                        a web-based voxel renderer
+                    </p>
+                </div>
+                <image src="/source/vox2.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </a>
+            
+        </div>
+        <div style="margin: 10px auto 5px auto; width: 750px">
+            <p style="padding: 0px; margin: 0px; font-size: 30px; text-align: center;">Gallery</p>
+        </div>
+        <div style="margin: 0px auto 0px auto; width: 756; display: grid; grid-template-columns: auto auto auto; gap: 0px; overflow: hidden; gap: 0px;">
+            <div class="gallery">
+                <image src="/source/circle1.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+                <image src="/source/wfc-88160.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+                <image src="/source/cloth1.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+                <image src="/source/cubes1.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+                <image src="/source/spudssquare1.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+                <image src="/source/wfc-8816.9.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+                <image src="/source/pyramid2.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+                <image src="/source/toes1.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+                <image src="/source/squares1.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </div>
+            <div class="gallery">
+            </div>
+            <div class="gallery">
+            </div>
+        </div>
+    </body>
+</html>

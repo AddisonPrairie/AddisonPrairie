@@ -1,0 +1,125 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+        <title>GAUSS - Addison Prairie </title>
+        <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+                font-family: "Figtree";
+                background-color: whitesmoke;
+            }
+            p {
+                padding: 0px;
+                margin: 5px 0px;
+                font-size: 18px;
+                text-indent: 30px;
+                color: #111111;
+            }
+            .comment {
+                text-align: center;
+                font-size: 15px;
+                margin: 4px 0px 10px 0px;
+            }
+
+            .step-name {
+                text-indent: 0px;
+                font-size: 30px;
+                margin: 10px 0px;
+                text-align: center;
+            }
+
+            .step-description {
+                font-size: 18px;
+            }
+            ol, ul {
+                font-size: 18px;
+            }
+            li {
+                margin: 4px 0px;
+            }
+            .code {
+
+                background-color: rgb(216, 216, 216);
+                margin: 10px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin: 10px auto 5px auto; width: 756px">
+            <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">GAUSS OVERVIEW</p>
+            <div style="height: 5px; width: 75px"></div>
+            <p style="color: #828282; padding: 0px; margin: 0px; font-size: 15px; text-align: center; text-indent: 0px">
+            <a href="google.com" style="color: #828282">GAUSS code</a> | <a href="/vox/demo/index.html" style="color: #828282">GAUSS demo</a></p>
+            <div style="height: 5px; width: 75px"></div>
+            
+            <p>
+                GAUSS is a browser based voxel renderer that I am currently developing as part of my computer science independent study.
+            </p>
+
+            <video width="750px" preload="auto" loop="true" autoplay="true" controls style="margin: 10px 3px 1px 3px; padding: 0px">
+                <source src="/videos/voxdaycycle.mp4" type="video/mp4">
+            </video>
+            <p class="comment">a day cycle on th 256x256x256 demo scene, captured in real time on a RTX 2060</p>
+
+            
+            <p>
+                It utilizes a slew of techniques to render large volumes of data in real time with realistic lighting:
+            </p>
+
+            <ul style="margin: 0px; list-style-type: bullet">
+                <li>Octree Data Structure - voxel data is stored in an octree structure to allow rays to skip over large chunks of empty space.</li>
+                <li>Next Event Estimation - at each light bounce, the renderer sends a seperate ray towards the sunlight to significantly increase the chance that a sample will hit a light source.</li>
+                <li>Temporal Reprojection - path tracing samples from previous frames are reprojected into the current frame and accumulated, allowing the renderer to reduce noise by reusing previous frames.</li>
+                <li>A Trous Denoising - a modified version of the <a href="https://jo.dreggn.org/home/2010_atrous.pdf">Edge Avoiding A Trous Wavelet Transform</a> denoises the raw image in five passes, estimating a 32x32 gaussian blur in a fraction of the time.</li>
+                <li>FXAA - a fast approximate anti-aliasing (FXAA) pass is done each frame to reduce aliasing.</li>
+            </ul>
+
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/mountainvox1.png"></image>
+            <p class="comment">256x256x256 demo scene of a mountain range, captured in real time</p>
+            
+            <p>
+                To see the current state of the renderer, visit <a href="/vox/demo/index.html" style="color: #828282">the demo</a>. You can rotate around the 256x256x256 demo scene by left clicking and moving your mouse. You can move towards the scene by pressing "W", and away from the scene using "S". 
+            </p>
+            <p> 
+                Because the voxel data must be random-accesed from a texture, the speed of the renderer is largely dependent on hardware. It tends to run extremely smoothly on discrete graphics cards but slower on laptops with integrated graphics. If your computer has a discrete graphics card but you experience slow performance, you may need to switch your Graphics Performance Preferences in Windows to high performance.
+            </p>
+
+
+            <div style="width: 100%; height: 10px"></div> 
+
+            <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">FUTURE PLANS</p>
+    
+            <div style="width: 100%; height: 10px"></div>
+
+            <p>
+                My top priority is to optimize the storage and structure of my voxel data to make ray tracing quicker. Possible improvements include:
+            </p>
+
+            <ul style="margin: 0px; list-style-type: bullet">
+                <li>order voxel data with morton codes to increase cache hits</li>
+                <li>store child voxel data in parent to decrease texture reads when intersecting partially filled octrees</li>
+            </ul>
+
+            <p>
+                Next, I want to make editing and uploading changes to the voxel data more efficient. I will look into ways to reconstruct my octree in parallel on the GPU.
+            </p>
+
+            
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/sierpenskivox1.png"></image>
+            <p class="comment">256x256x256 demo scene with next event estimation direct lighting, captured in real time</p>
+
+        <div style="width: 100%; height: 10px"></div> 
+
+        <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">THANKS</p>
+
+        <div style="width: 100%; height: 10px"></div>
+
+        <p style="font-size: 18px">
+            Thanks to the papers/presentations <a href="https://jo.dreggn.org/home/2010_atrous.pdf">Edge Avoiding A Trous Wavelet Transform</a> and <a href="https://developer.download.nvidia.com/assets/gamedev/files/sdk/11/FXAA_WhitePaper.pdf">FXAA</a>, which I used for spatial denoising and anti-aliasing.
+        </p>
+
+        </div>
+    </body>
+</html>

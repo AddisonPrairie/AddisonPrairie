@@ -1,0 +1,333 @@
+<html>
+    <head>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Figtree">
+        <title>GALOIS - Addison Prairie </title>
+        <style>
+            body {
+                padding: 0px;
+                margin: 0px;
+                font-family: "Figtree";
+                background-color: whitesmoke;
+            }
+            p {
+                padding: 0px;
+                margin: 5px 0px;
+                font-size: 18px;
+                text-indent: 30px;
+                color: #111111;
+            }
+            .comment {
+                text-align: center;
+                font-size: 15px;
+                margin: 4px 0px 10px 0px;
+            }
+
+            .step-name {
+                text-indent: 0px;
+                font-size: 30px;
+                margin: 10px 0px;
+                text-align: center;
+            }
+
+            .step-description {
+                font-size: 18px;
+            }
+            ol, ul {
+                font-size: 18px;
+            }
+            li {
+                margin: 4px 0px;
+            }
+            .code {
+
+                background-color: rgb(216, 216, 216);
+                margin: 10px;
+                padding: 10px;
+            }
+        </style>
+    </head>
+    <body>
+        <div style="margin: 10px auto 5px auto; width: 756px">
+            <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">GALOIS OVERVIEW</p>
+            <div style="height: 5px; width: 75px"></div>
+            <p style="color: #828282; padding: 0px; margin: 0px; font-size: 15px; text-align: center; text-indent: 0px">
+            <a href="google.com" style="color: #828282">GALOIS code</a> | <a href="/sdf/demo/index.html" style="color: #828282">GALOIS demo</a></p>
+            <div style="height: 5px; width: 75px"></div>
+            
+            <p style="text-align: center">
+                GALOIS is a website for you to create and render 3D fractals with realistic lighting.
+            </p>
+
+            <video width="750px" preload="auto" loop="true" autoplay="true" controls style="margin: 10px 3px 1px 3px; padding: 0px">
+                <source src="/videos/move.mp4" type="video/mp4">
+            </video>
+
+            <div style="width: 100%; height: 10px"></div>
+            
+            <p>
+                Once you enter the <a href="/sdf/demo/index.html" style="color: #111111">GALOIS demo</a>, you can create and alter your fractal in the drop down control on the right of your screen. Basic controls have a blue highlight on their left border. More advanced controls have a grey highlight on their left border. Learn more about each control in the instructions below.
+            </p>
+            
+            <div style="width: 100%; height: 50px"></div>
+
+            <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">INSTRUCTIONS</p>
+            <p style=" font-size: 18px">Note: this demo uses webGPU. As such, it may require an experimental browser build like <a href="https://www.google.com/chrome/canary/">Chrome Canary</a> or <a href="https://www.microsoftedgeinsider.com/en-us/download/canary">Microsoft Edge Canary</a>. If you receive a "webGPU not supported" alert upon entering the site, you may need to enable webGPU in your browser's flags.</p>
+
+            <p class="step-name">Step 1 - moving around your fractal</p>
+            <p class="step-description">To change the direction you are facing, left click and move your mouse. Once you are facing your desired direction, left click again. To move, use the following controls: </p>
+            <ul style="margin: 0px; list-style-type: none">
+                <li>W - forward</li>
+                <li>A - left</li>
+                <li>S - backward</li>
+                <li>D - right</li>
+            </ul>
+            <p class="step-description">GALOIS default rendering methods is path tracing (simulating light bounces realistically). If you find the site running slowly on your computer, you may want to disable path tracing while moving around. To do so, uncheck the box labeled "Path Tracing."</p>
+            
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/apalonian1.png"></image>
+            <p class="comment">a kleinian group limit set</p>
+
+            <p class="step-name">Step 2 - Adjusting environmental and lighting settings</p>
+            <p class="step-description">
+                GALOIS offers you a set of changeable parameters that adjust its environment. The time of day and position of the sun can be changed using their respective sliders in the "Basic Lighting and Environmental Variables" folder, and a floor can be added or removed by checking the "Floor" box. Additionally, the number of times light bounces can be changed in the "Light Bounces" field.
+            </p>
+            
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/brickball1.png"></image>
+            <p class="comment">a low iteration pseudo-Kleinian menger</p>
+
+            <p class="step-name">Step 3 - Adjusting fractal parameters</p>
+            <p class="step-description">
+                Each fractal has certain parameters that, when altered, change its structure. These parameters can be changed in the "Fractal Structure" folder. The GALOIS default fractal has three parameters:</p>
+            </p>
+            <ul style="margin: 0px; list-style-type: none">
+                <li>"Cutoff" - changes the extent to which the fractal reaches.</li>
+                <li>"kDiv" - changes the width of some parts of the fractal, and switches whether it has a more organic (lower values) or geometric (higher values) structure.</li>
+                <li>"fIterations" - changes the level of detail of the fractal.</li>
+            </ul>
+            
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/spudsville1.png"></image>
+            <p class="comment">"Spudsville" a hybrid system</p>
+
+            <p class="step-name">Step 4 - Saving your image</p>
+            <p class="step-description">
+                Once you have adjusted the fractal structure to your liking, let the progressive renderer run until it achieves your desired image quality. You can save your image using the "Download Image" button in the "Basic Lighting and Controls" folder.
+            </p>
+            
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/mechanical1.png"></image>
+            <p class="comment">an adjusted Apollonian</p>
+
+            <p class="step-name">Step 5 - Advanced settings</p>
+            <p class="step-description">
+                Once you are comfortable using GALOIS basic features, you can try more advanced settings as described below:
+            </p>
+            <ol>
+                <li>
+                    "Camera" folder
+                    <ul>
+                        <li>"Zoom" - affects the distance between the image plane and the pinhole. Values greater than one will cause the camera to zoom in, while values less than one will create a 'fish eye' effect.</li>
+                        <li>"Select Focal Point" - clicking this will continually set the focus point to under your cursor. Once your cursor is over the part of the scene you wish to have in focus, left click. Changing the focal point will have no effect on the render if "Depth of Field" is set to 0.
+                        <li>"Depth of Field" - affects the extent of the blur applied to objects outside the camera's focal plane. If set to 0, no depth of field affect will be applied.</li>
+                    </ul>
+                </li>
+                <li>
+                    "Ray Marching" folder
+                    <ul>
+                        <li>"Detail/Epsilon" - affects the detail of the fractal. A smaller value will increase rendering time but provide more detail.</li>
+                        <li>"Iterations" - the number of steps that the ray tracing function uses to intersect a ray against the scene. If you see visible holes in your fractal, or visible holes in shadows, you may have to increase the number of iterations.</li>
+                        <li>"Breakout" - the distance from the fractal the ray tracing function will stop. Decreasing this value will improve performance but may stop rendering the fractal at further distances.
+                    </ul>
+                </li>
+            </ol>
+            
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/construction1.png"></image>
+            <p class="comment">another pseudo-Kleinian menger</p>
+
+            <p class="step-name">Step 6 - Loading/creating different fractals</p>
+            <p class="step-description">
+                GALOIS utilizes signed distance functions (SDFs) to create its 3D fractals. A core feature of GALOIS is your ability to write your own SDFs or load another user's SDFs. To load/write an SDF, click "Open/Close Code" in "Advanced Controls > Code." Once your code is ready, click "Compile Code." Any errors will be printed to the JavaScript console.
+            </p>
+            <p class="step-description">
+                You can also specify parameters in your code that allow you to manipulate the structure of your fractal in real time. A description of how to add such parameters is provided in the GALOIS default script, and must appear in every GALOIS script.
+            </p>
+
+            <image width="750px" style="margin: 10px 3px 1px 3px; padding: 0px" src="/source/brocolli1.png"></image>
+            <p class="comment">an iterated function system (IFS)</p>
+
+            <div style="width: 100%; height: 10px"></div>
+
+            <div style="width: 100%; height: 10px"></div>
+
+            <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">OTHER FRACTALS</p>
+            
+            <div style="width: 100%; height: 10px"></div>
+
+            <p style="font-size: 18px">
+                In addition to the GALOIS default SDF, I've provided a few additional SDFs below. To use these, simply copy the following code into the GALOIS code editor and compile.
+            </p>
+
+            <p class="step-name">Spudsville</p>
+<pre class="code">//do not delete the following comments!
+
+//none of your parameters can have the following names:
+//frames, canvas, groups, position, forward, right, pinhole, zoom, reset
+//pathtrace, epsilon, iterations, temp1, bounces, sunpos, floor, focallength
+//aperture, breakout
+    
+//additionally, the following words cannot be used in code:
+//E, PI, seed, first, depth
+
+//put any uniforms here, in the format
+//name : type, //[input method]
+//valid input methods: [default value] or [default, min, max, step]
+//valid types: i32, f32, u32, vec[1,2,3,4]&lti32/f32/u32&gt
+cutoff : f32, //[2.5, .1, 10., .01]
+steps : i32, //[4, 1, 10, 1]
+c : vec3&ltf32&gt, //[.5, 0, 2, .01]
+                
+//Code:
+//Code from: https://www.shadertoy.com/view/4sGyRR
+
+//Recommended parameter values:
+//c - {.8, .7, 1.13}
+//steps - 6
+
+fn DE(z : vec3&ltf32&gt) -> f32 {
+    return max(fractal(z), length(z) - uniforms.cutoff);
+}
+                
+fn fractal(z : vec3&ltf32&gt) -> f32 {
+    var c = uniforms.c;
+                    
+    var scale = 1.;
+    var p = z;
+                    
+    for (var i = 0; i &lt uniforms.steps; i = i + 1) {
+        p = 2. * clamp(p, -c, c) - p;
+        var r2 = dot(p, p);
+        var k = max(1. / r2, .03);
+        p = p * k;
+        scale = scale * k;
+    }
+                    
+    var l = length(p.xy);
+    var rxy = l - 3.;
+    var n = l * p.z;
+                    
+    rxy = max(rxy, -(n) / length(p) - .02);
+    return (rxy) / abs(scale);
+}
+                
+fn getColor(z : vec3&ltf32&gt) -> vec3&ltf32&gt {
+    return vec3&ltf32&gt(1.);
+}</pre>
+
+<p class="step-name">Pseudo-Kleinian Menger</p>
+<pre class="code">
+//do not delete the following comments!
+
+//none of your parameters can have the following names:
+//frames, canvas, groups, position, forward, right, pinhole, zoom, reset
+//pathtrace, epsilon, iterations, temp1, bounces, sunpos, floor, focallength
+//aperture, breakout
+    
+//additionally, the following words cannot be used in code:
+//E, PI, seed, first, depth
+
+//put any uniforms here, in the format
+//name : type, //[input method]
+//valid input methods: [default value] or [default, min, max, step]
+//valid types: i32, f32, u32, vec[1,2,3,4]&lti32/f32/u32&gt
+MI : i32, //[5, 0, 20, 1]
+Size : f32, //[1, 0, 2, .01]
+CSize : vec3&ltf32&gt, //[1, 0, 2, .01]
+C : vec3&ltf32&gt, //[0, -2, 2, .01]
+DEoffset : f32, //[0, 0, .01, .0001]
+Offset : vec3&ltf32&gt, //[0, -2, 2, .01]
+MnIterations : i32, //[2, 0, 20, 1]
+MnScale : f32, //[3, 0, 4, .01]
+MnOffset : vec3&ltf32&gt,//[1, 0, 2, .01]
+cutoff : f32,//[2.5, .5, 10., .01]
+
+//Code:
+//via https://github.com/Syntopia/Fragmentarium
+
+fn Menger(p : vec3&ltf32&gt) -> f32
+{
+    var r : f32;
+    
+    var n = 0;
+    // Fold
+    var z = abs(p);
+    if (z.x&ltz.y){z = z.yxz;}
+    if (z.x&ltz.z){z = vec3&ltf32&gt(z.z, z.y, z.x);}
+    if (z.y&ltz.z){z = z.xzy;}
+    if (z.z&lt1./3.) {
+        z.z = z.z - 2. * (z.z - 1. / 3.);
+    }
+    
+    while (n &lt uniforms.MnIterations && dot(z,z)&lt100.0) {
+        
+        z=uniforms.MnScale* (z-uniforms.MnOffset)+uniforms.MnOffset;
+        
+        // Fold
+        z = abs(z);
+        if (z.x&ltz.y){ z = z.yxz;}
+        if (z.x&ltz.z){ z = vec3&ltf32&gt(z.z, z.y, z.x);}
+        if (z.y&ltz.z){ z = z.xzy;}
+        if (z.z&lt1./3.) {
+            z.z = z.z - 2. * (z.z - 1. / 3.);
+        }
+        
+        r = dot(z-uniforms.MnOffset, z-uniforms.MnOffset);
+
+        n = n + 1;
+    }
+
+    return f32(z.x-uniforms.MnOffset.x) * pow(uniforms.MnScale, f32(-n));
+}
+
+
+
+fn Thing2(z : vec3&ltf32&gt) -> f32 {
+    var p = z;
+    var r2=dot(p,p);
+
+    var DEfactor=1.;
+    
+    for(var i=0;i&ltuniforms.MI && r2&lt60.;i = i + 1){
+        p=2.*clamp(p, -uniforms.CSize, uniforms.CSize)-p;
+        
+        r2=dot(p,p);
+        
+        var k=max(uniforms.Size/r2,1.);
+        p=p*k; DEfactor=DEfactor*k;
+        
+        p=p+uniforms.C;
+
+        r2=dot(p,p);
+    }
+    //Call basic shape and scale its DE
+    return abs(0.5*Menger(p-uniforms.Offset)/DEfactor-uniforms.DEoffset);
+}
+
+fn DE(p : vec3&ltf32&gt) -> f32 {
+    return  max(Thing2(p),  length(p) - uniforms.cutoff);
+}
+
+fn getColor(z : vec3&ltf32&gt) -> vec3&ltf32&gt {
+    return (vec3&ltf32&gt(1.));
+}
+</pre>
+
+        <div style="width: 100%; height: 10px"></div>
+
+        <p style="padding: 0px; margin: 0px; font-size: 50px; text-align: center; color: #111111; text-indent: 0px">THANKS</p>
+
+        <div style="width: 100%; height: 10px"></div>
+
+        <p style="font-size: 18px">
+            Thanks to <a href="https://github.com/dataarts/dat.gui">dat.GUI</a>, which helped create the HUD, and <a href="https://codemirror.net/">CodeMirror</a>, which helped create the code editor.
+        </p>
+
+        </div>
+    </body>
+</html>
