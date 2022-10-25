@@ -140,7 +140,6 @@ let guiValues = {
         document.body.style = "cursor: zoom-in";//url(/icons8-full-screen-100.png);";
         let toDo = (e) => {
             e.preventDefault();
-            console.log("rotate ignore == false");
             document.removeEventListener("mousedown", toDo);
             guiValues.flipState(document.createEvent("HTMLEvents"));
             guiValues.rotateIgnore = false;
@@ -248,7 +247,6 @@ function checkChanged() {
 //set uniforms each frame
 function refreshUniforms() {
     if (guiValues.rotateIgnore == true) {
-        console.log("changing focal length");
         guiValues.focal_length = Math.floor(guiValues.depth * 1000.) / 1000.;
     }
 
@@ -320,7 +318,6 @@ function refreshUserVariables() {
     for (var x in userVariables.arr) {
         
         let cur = userVariables.arr[x];
-        //console.log(cur.name + " " + );
         let val = [];
         //get array of values
         for (y in cur.guiNames) {
@@ -345,8 +342,6 @@ function initGui() {
         basicFolder.add(guiValues, 'download').name("Download Image");
         basicFolder.add(guiValues, 'Pause/Play').name("Pause/Continue Rendering");
     }
-
-    console.log(basicFolder.domElement.parentNode.querySelectorAll(".cr"));
 
     basicFolder.domElement.parentNode.querySelectorAll(".cr").forEach(
         x => {
@@ -534,10 +529,6 @@ window.onload = async () => {
         this.onResize();
     }
 
-    console.log(document.querySelector("#code"));
-
-    console.log(CodeMirror);
-
     codemirror = CodeMirror(
         document.querySelector("#code"),
         {
@@ -581,10 +572,6 @@ window.onload = async () => {
     input = new Input(guiValues, canvas.getCanvas());
 
     //let buf = new ArrayBuffer(256 * 256 * 256);
-
-    console.log(guiValues);
-    console.log(userVariables);
-    console.log(uniforms);
 
     await guiValues["Compile"]();
 

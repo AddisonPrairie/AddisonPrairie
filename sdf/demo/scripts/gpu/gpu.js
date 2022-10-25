@@ -347,7 +347,7 @@ fn march(o : ray) -> rayhit {
 
 //get normal from point
 fn getNormal(z : vec3<f32>) -> vec3<f32> {
-    var eps = max(uniforms.epsilon * .5, 1.0e-7);//uniforms.epsilon * uniforms.temp1;
+    var eps = max(uniforms.epsilon * .5, 1.0e-7);
     var ez = vec3<f32>(0., 0., eps);
     var ex = vec3<f32>(eps, 0., 0.);
     var ey = vec3<f32>(0., eps, 0.);
@@ -739,13 +739,10 @@ class gpu {
             if (slider != null) {
                 start = slider[1];
                 slider = false;
-                console.log(start);
             } else {
                 slider = line.match(/\[\s*([0-9e.\-]+)\s*,\s*([0-9e.\-]+)\s*,\s*([0-9e.\-]+)\s*,\s*([0-9e.\-]+)\]/);
-                console.log(slider);
                 //slider is not found - ignoring this line
                 if (slider === null) {
-                    console.log("no slider");
                     ignore = true;
                 } else {
                     start = slider[1];
@@ -759,13 +756,10 @@ class gpu {
             //if the line is a comment, or something
             if (!type) {
                 ignore = true;
-                console.log("no type");
             }
 
             if (ignore) {
-                console.log("Skipped line: " + line);
             } else { //else we found a successful line
-                console.log("valid line");
                 variables[variables.length] = {
                     name: name[0],
                     type: type[0],
@@ -856,9 +850,6 @@ class gpu {
     addToGUI(folder, name, slider, start, min, max, step) {
         this.params.guiValues[name] = start;
 
-        console.log("hello");
-        console.log(this.params.guiValues);
-
         //value that is typed in
         if (slider == false) {
             folder.add(this.params.guiValues, name);
@@ -872,7 +863,6 @@ class gpu {
 
     //fetches shader code, compiles, creates requisite buffers, etc.
     async prep() {
-        console.log(navigator);
         //webGPU adapter
         const adapter = await navigator.gpu.requestAdapter({powerPreference: 'high-performance'});
 
@@ -1205,8 +1195,8 @@ class gpu {
         let imageY = this.params.canvasY;
 
         //size of actual (buffer) array
-        let bufferX = this.info.groupsX;//this.params.canvasWidth + ((16 - (this.params.canvasWidth % 16)) % 16);
-        let bufferY = this.info.groupsY;//this.params.canvasHeight + ((16 - (this.params.canvasWidth % 16)) % 16);
+        let bufferX = this.info.groupsX;
+        let bufferY = this.info.groupsY;
 
         //created return image, suitable for canvas
         let buf = new ArrayBuffer(bufferX * bufferY * 4 * Uint8ClampedArray.BYTES_PER_ELEMENT);

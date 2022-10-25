@@ -74,33 +74,6 @@ let guiValues = {
         }
     },
     pause: false,
-    "Code": () => {
-        if (modal.style.display === "none") {
-            modal.style.display = "block";
-            if (guiValues.pause == false) {
-                guiValues["Pause/Play"]();
-            }
-        } else {
-            modal.style.display = "none";
-            if (guiValues.pause == true) {
-                guiValues["Pause/Play"]();
-            }
-        }
-    },
-    "initRefocus": () => {
-        guiValues.rotateIgnore = true;
-        //<a target="_blank" href="https://icons8.com/icon/38033/full-screen">Full Screen</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a>
-        document.body.style = "cursor: zoom-in";//url(/icons8-full-screen-100.png);";
-        let toDo = (e) => {
-            e.preventDefault();
-            console.log("rotate ignore == false");
-            document.removeEventListener("mousedown", toDo);
-            guiValues.flipState(document.createEvent("HTMLEvents"));
-            guiValues.rotateIgnore = false;
-            document.body.style.cursor = "default";
-        }; 
-        document.addEventListener("mousedown", toDo);
-    },
     "wfc-reset": () => {
         wfc();
     },
@@ -506,14 +479,10 @@ window.onload = async () => {
     //gets non-gui input
     input = new Input(guiValues, canvas.getCanvas());
 
-    //let buf = new ArrayBuffer(256 * 256 * 256);
-
     input.setForwardAndRight();
     input.setPosition();
 
     wfc();
-
-    //newUpdate(2, 2, 2);
 
     //begin render loop
     window.requestAnimationFrame(frame);
@@ -905,8 +874,6 @@ function collapseTile(x, y, z) {
     curTile.tile = curTile.possible[Math.floor(curTile.possible.length * Math.random())];
 
     curTile.possible = [curTile.tile];
-
-    //console.log("Collapsed " + x + " " + y +  " " + z + " to value " + curTile.tile);
 }
 
 

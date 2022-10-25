@@ -4,7 +4,7 @@ async function voxels(opt) {
 
     //user must supply a canvas to render to
     if (!("canvas" in opt) || !(opt["canvas"] instanceof HTMLCanvasElement)) {
-        console.log("voxel error: no canvas");
+        console.error("voxel error: no canvas");
         return;
     }
 
@@ -123,8 +123,6 @@ async function voxels(opt) {
         };
     }
 
-    console.log(attributeLocations);
-
     {//set one time uniforms like texture pointers
         gl.useProgram(rawProgram);
         gl.uniform1i(attributeLocations.raw_states, 0);
@@ -203,7 +201,6 @@ async function voxels(opt) {
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_WRAP_T, gl.CLAMP_TO_EDGE);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MIN_FILTER, gl.NEAREST);
         gl.texParameteri(gl.TEXTURE_2D, gl.TEXTURE_MAG_FILTER, gl.NEAREST);
-        console.log(data);
         gl.texImage2D(gl.TEXTURE_2D, 0, gl.R8UI, 4680, 4097, 0, gl.RED_INTEGER, gl.UNSIGNED_BYTE, data);
     };
 
@@ -374,8 +371,6 @@ async function voxels(opt) {
                 atrousSizes[i][j * 2] = arr[j % 5];
                 atrousSizes[i][j * 2 + 1] = arr[Math.floor(j / 5)];
             }
-
-            console.log(atrousSizes[i]);
         }
     }
 
@@ -525,8 +520,6 @@ async function voxels(opt) {
                     }
                 }
             }
-
-            console.log("invalid argument to setForward");
             return;
         },
         getForward: () => forward,
@@ -539,8 +532,6 @@ async function voxels(opt) {
                     }
                 }
             }
-
-            console.log("invalid argument to setForward");
             return;
         },
         getRight: () => right,
@@ -553,8 +544,6 @@ async function voxels(opt) {
                     }
                 }
             }
-
-            console.log("invalid argument to setForward");
             return;
         },
         getPosition: () => position

@@ -87,7 +87,6 @@ window.onload = async () => {
 
 
 function frame() {
-    //console.log(forward.x * right.x + forward.y * right.y + forward.z * right.z);
     gpu.setForward(forward);
     gpu.setRight(right);
     position = {x: 128, y: 128, z: 128};

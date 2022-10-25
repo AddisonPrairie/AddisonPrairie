@@ -1,6 +1,5 @@
 
 class Canvas {
-
     canvas;
     width;
     height;
