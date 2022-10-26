@@ -370,7 +370,7 @@ void getMaterial(ivec3 ipos, inout vec3 albedo, inout vec3 emissive) {
 
     
     
-    albedo = (r2.y * .1 + .9 ) * (r2.x > .5 ? vec3(1.) : vec3(1., 0.7, 0.7));
+    albedo = (r2.y * .1 + .9 ) * (r2.x > .5 ? vec3(.45, .6, .7) : vec3(1., 1., 1.));
 }
 
 //get the color of a pixel
@@ -384,7 +384,7 @@ vec3 getSample(in vec3 o, in vec3 d) {
 
     bool hit = intersect(pos, dir, normal, dist, ipos);
 
-    vec3 sky = vec3(0.25);
+    vec3 sky = vec3(0.5);
 
     pos = pos + dir * dist + .0001 * normal;
 

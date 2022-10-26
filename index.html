@@ -63,6 +63,7 @@
                 display: inline;
                 cursor: context-menu;
             }
+
             .article > div > .Title {
                 text-align: center;
                 margin: 0px;
@@ -75,6 +76,7 @@
                 margin: 0px;
                 padding: 0px;
                 font-size: 18px;
+                /*delete to fix*/ display: none;
             }
             .gallery {
                 margin: 2px 2px;
@@ -113,7 +115,7 @@
             <p style="text-align: center; font-size: 30px;  margin: 25px auto">Addison Prairie - Portfolio</p>
         </div>
         <div style="margin: 10px auto 5px auto; width: 756; padding: 0px 0px 0px 0px">
-            <p style="padding: 0px; margin: 0px; font-size: 30px; text-align: center;">Demos</p>
+            <p style="padding: 0px; margin: 0px; font-size: 30px; text-align: center;">Interactive Demos</p>
         </div>
         <div style="margin: 0px auto 0px auto; width: 756; display: grid; grid-template-columns: auto auto auto; gap: 0px; overflow: hidden;">
             <a class="article" href="/sdf/sdf.html">
@@ -147,12 +149,43 @@
                         a web-based voxel renderer
                     </p>
                 </div>
-                <image src="/source/vox2.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+                <image src="/source/vox3.png" data-speed="2500" data-values="spiral1.png;cracks.png;brocolli.png"></image>
+            </a>
+            <a href="sdf/sdf.html" style="text-decoration: none;">
+                <div>
+                    <p style="color: #111111; text-align: center; font-size: 18px; margin: 0px">
+                        GALOIS
+                    </p>
+                    <p style="color: #111111; text-align: center; font-size: 14px; margin: 0px">
+                        a website for path tracing 3D fractals
+                    </p>
+                </div>
+            </a>
+            <a href="wfc/wfc.html" style="text-decoration: none;">
+                <div>
+                    <p style="color: #111111; text-align: center; font-size: 18px; margin: 0px">
+                        CANTOR
+                    </p>
+                    <p style="color: #111111; text-align: center; font-size: 14px; margin: 0px">
+                        a website for generating 3D sculptures
+                    </p>
+                </div>
+            </a>
+            <a href="vox/vox.html" style="text-decoration: none;">
+                <div>
+                    <p style="color: #111111; text-align: center; font-size: 18px; margin: 0px">
+                        GAUSS
+                    </p>
+                    <p style="color: #111111; text-align: center; font-size: 14px; margin: 0px">
+                        a web-based voxel renderer
+                    </p>
+                </div>
             </a>
             
         </div>
+        <div style="width: 100%; height: 30px"></div>
         <div style="margin: 10px auto 5px auto; width: 750px">
-            <p style="padding: 0px; margin: 0px; font-size: 30px; text-align: center;">Gallery</p>
+            <p style="padding: 0px; margin: 0px; font-size: 30px; text-align: center;">Example Images Created By Demos</p>
         </div>
         <div style="margin: 0px auto 0px auto; width: 756; display: grid; grid-template-columns: auto auto auto; gap: 0px; overflow: hidden; gap: 0px;">
             <div class="gallery">
